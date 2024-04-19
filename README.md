@@ -93,12 +93,12 @@ ________________________________________________________________________________
 
 -------------------------- РЕЗУЛЬТАТ  ||  THE RESULT ------------------------------
 Встроены все запрошенные функции и добавлены некоторые дополнительные функции.
-Для бэк-ена полностью реализовано требование «Не использовать фреймворк». Для внешнего интерфейса использовалось множество библиотек и плагинов.
+Для Back-end полностью реализовано требование «Не использовать фреймворк». Для Front_end использовалось множество библиотек и плагинов.
 Запрограммировано 35-40 часов. (при технических проблемах)
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 All requested features have been built and some additional features have been added.
-The requirement "Ne ispolzovat fraymvork" has been fully implemented for the back-en. Many libraries and plugins were used for the front-end.
+The requirement "Ne ispolzovat fraymvork" has been fully implemented for the Back-end. Many libraries and plugins were used for the Front-end.
 35-40 Hours programmed. (with technical problems)
 
   
