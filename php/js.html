@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>График кликов</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<table id="clicksTable">
+    <tr>
+        <th>Дата</th>
+        <th>Клики</th>
+    </tr>
+    <tr>
+        <td>2022-10-01</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>2022-10-02</td>
+        <td>70</td>
+    </tr> <!-- Добавьте остальные данные -->
+</table> <canvas id="myChart" width="400" height="200"></canvas>
+<script>
+    function processData(table) {
+        var data = {};
+        table.querySelectorAll('tr').forEach((row, index) => {
+            if (index !== 0) {
+                var date = row.cells[0].textContent;
+                var clicks = parseInt(row.cells[1].textContent);
+                data[date] = clicks;
+            }
+        });
+        return data;
+    }
+
+    function drawLineChart(labels, data) {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Количество кликов',
+                    data: data,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'day'
+                        }
+                    }
+                }
+            }
+        });
+    }
+    var table = document.getElementById('clicksTable');
+    var data = processData(table);
+    var labels = Object.keys(data);
+    var clicks = Object.values(data);
+    drawLineChart(labels, clicks);
+</script>
+</body>
+
+</html>
